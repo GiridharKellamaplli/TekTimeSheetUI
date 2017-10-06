@@ -42,13 +42,14 @@
 
 		</div>
 		
-		
+		<div>
 		<div class="form-group">
 			<label class="col-md-1 control-label">date</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" id="datepicker" name="date"
 					ng-model="ctrl.user.date" />
 
+			</div>
 			</div>
 
 		</div>
