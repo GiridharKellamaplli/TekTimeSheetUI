@@ -23,7 +23,7 @@
 
       //Interviews on the desired date
       self.getInterviewsByDate = function (x) {
-          console.log('entered service');
+        
           console.log(x);
         var promise1 = $http.get('http://ec2-52-91-247-47.compute-1.amazonaws.com:8080/TekTimeSheet-1.0/interview/'+x);
         var promise2 = promise1.then(function (response) {
@@ -31,6 +31,20 @@
         });
         return promise2;
       };
+
+      //Add Interview Slot
+
+      self.addInterview = function (user) {
+        console.log("in service");
+        console.log("hi "+user.name);
+       
+          var promise1 = $http.post('http://ec2-52-91-247-47.compute-1.amazonaws.com:8080/TekTimeSheet-1.0/interview/',user);
+
+          var promise2 = promise1.then(function (response) {
+            return response.data;
+          });
+          return promise2;
+        };
   
     });
 })();

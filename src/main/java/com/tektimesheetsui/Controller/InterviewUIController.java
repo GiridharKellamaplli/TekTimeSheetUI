@@ -9,8 +9,14 @@ public class InterviewUIController {
 
 	@RequestMapping(value="/viewPage",method=RequestMethod.GET)
 	public String homePage(){
-		System.out.println("hello");
+		System.out.println("hello from index");
 		return "index";
 	}
+	@RequestMapping(value="/viewPage/add",method=RequestMethod.GET)
+	public String add(){
+		System.out.println("hello from add");
+		return "add";
+	}
 	
+
 }

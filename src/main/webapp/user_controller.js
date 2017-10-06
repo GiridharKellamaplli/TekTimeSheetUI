@@ -2,9 +2,10 @@
 
 angular.module('myApp').controller('UserController', ['$scope', 'UserService', function($scope, UserService) {
     var self = this;
-    self.user={id:null,username:'',address:'',email:''};
-    self.users=[];
+     self.user={date:'', startTime:'',endTime:'' ,name:'',mode:'',client:'',vendor:'',round:''};
+    // self.users=[];
     self.allSlots=allSlots;
+    
     self.todayInfo=todayInfo;
     self.getInterviewsByDate=getInterviewsByDate;
 
@@ -12,7 +13,6 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     function allSlots(){
         UserService.getAllInterviewDetails().then(
             function (data){
-                
                 self.interviews=data;
                 self.selected=data[0];
             }
@@ -22,7 +22,7 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
     //Today's Interview Info
     function todayInfo(){
         UserService.getTodayInterviewDetails().then(
-            function(data){
+            function(data){   
                 self.interviews=data;
                 self.selected=data[0];
             }
@@ -35,6 +35,19 @@ angular.module('myApp').controller('UserController', ['$scope', 'UserService', f
             function(data){
                 self.interviews=data;
                 self.selected=data[0];
+            }
+        )
+    }
+    self.addInterview= function (user){
+    	console.log('in controller');
+       console.log("hi " + user.name); 
+       console.log(JSON.stringify(user));
+    var date=user.date;
+    console.log(date);
+    
+        UserService.addInterview(user).then(allSlots,
+             function(){
+        		  console.log('failure');  
             }
         )
     }
