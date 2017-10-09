@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>AngularJS $http Example</title>
+<title>TekTimeSheet</title>
 <style>
 .username.ng-valid {
 	background-color: lightgreen;
@@ -61,7 +61,7 @@
 				</p>
 				<button type="button" ng-click="ctrl.getInterviewsByDate()">Details</button>
 			</div>
-			
+
 			<form action="/viewPage/add">
 				<div>
 					<button type="submit">add</button>
@@ -78,8 +78,9 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>IDs</th>
 							<th>Date</th>
+							<th>Day</th>
 							<th>StartTime</th>
 							<th>EndTime</th>
 							<th>Name</th>
@@ -93,9 +94,10 @@
 					<tbody>
 						<tr ng-repeat="u in ctrl.interviews">
 							<td><span ng-bind="u.id"></span></td>
-							<td><span ng-bind="u.date"></span></td>
-							<td><span ng-bind="u.startTime"></span></td>
-							<td><span ng-bind="u.endTime"></span></td>
+							<td><span ng-bind="u.interviewDate"></span></td>
+							<td><span ng-bind="u.dayOfWeek"></span></td>
+							<td><span ng-bind="u.startTimeText"></span></td>
+							<td><span ng-bind="u.endTimeText"></span></td>
 							<td><span ng-bind="u.name"></span></td>
 							<td><span ng-bind="u.mode"></span></td>
 							<td><span ng-bind="u.client"></span></td>

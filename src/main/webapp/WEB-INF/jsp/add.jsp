@@ -6,18 +6,23 @@
 .username.ng-valid {
 	background-color: lightgreen;
 }
+
 .username.ng-dirty.ng-invalid-required {
 	background-color: red;
 }
+
 .username.ng-dirty.ng-invalid-minlength {
 	background-color: yellow;
 }
+
 .email.ng-valid {
 	background-color: lightgreen;
 }
+
 .email.ng-dirty.ng-invalid-required {
 	background-color: red;
 }
+
 .email.ng-dirty.ng-invalid-email {
 	background-color: yellow;
 }
@@ -41,46 +46,49 @@
 				ng-model="ctrl.user.id" /-->
 
 		</div>
-		
-		<div>
+
 		<div class="form-group">
-			<label class="col-md-1 control-label">date</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="datepicker" name="date"
-					ng-model="ctrl.user.date" />
-
-			</div>
-			</div>
-
-		</div>
-		<div class="form-group">
-			<label class="col-md-1 control-label">startTime</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="timepicker"
-					name="startTime" ng-model="ctrl.user.startTime" />
-
-			</div>
-
-		</div>
-		
-		<div class="form-group">
-			<label class="col-md-1 control-label">endTime</label>
-			<div class="col-md-9">
-				<input type="text" class="form-control" id="timepicker"
-					name="endTime" ng-model="ctrl.user.endTime" />
-
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="col-md-1 control-label">name</label>
+			<label class="col-md-1 control-label">Name</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" name="name"
 					ng-model="ctrl.user.name" />
 
 			</div>
 		</div>
+
+		<div>
+			<div class="form-group">
+				<label class="col-md-1 control-label">Day</label>
+				<div class="col-md-9">
+					<input type="date" class="form-control" name="interviewLocalDate"
+						ng-model="ctrl.user.interviewLocalDate" required />
+
+				</div>
+			</div>
+
+		</div>
 		<div class="form-group">
-			<label class="col-md-1 control-label">mode</label>
+			<label class="col-md-1 control-label">Start Time</label>
+			<div class="col-md-9">
+
+				<input type="time" name="startTimeText" class="form-control"
+					ng-model="ctrl.user.startTimeText" />
+
+			</div>
+
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-1 control-label">End Time</label>
+			<div class="col-md-9">
+				<input type="time" class="form-control" name="endTimeText"
+					ng-model="ctrl.user.endTimeText" />
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-md-1 control-label">Mode</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" name="mode"
 					ng-model="ctrl.user.mode" />
@@ -88,7 +96,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-md-1 control-label">client</label>
+			<label class="col-md-1 control-label">Client</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" name="client"
 					ng-model="ctrl.user.client" />
@@ -97,7 +105,7 @@
 		</div>
 
 		<div class="form-group">
-			<label class="col-md-1 control-label">vendor</label>
+			<label class="col-md-1 control-label">Vendor</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" name="vendor"
 					ng-model="ctrl.user.vendor" />
@@ -105,7 +113,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-md-1 control-label">round</label>
+			<label class="col-md-1 control-label">Round</label>
 			<div class="col-md-9">
 				<input type="text" class="form-control" name="round"
 					ng-model="ctrl.user.round" />
@@ -116,7 +124,7 @@
 		<div class="form-group">
 			<div style="padding-left: 110px">
 				<div class="row">
-					<label>Click here to add slot </label>
+					<!-- <label>Click here to add slot </label> -->
 					<button type="button" ng-click="ctrl.addInterview(ctrl.user)"
 						class="btn btn-warning btn-sm">Add</button>
 				</div>
@@ -140,13 +148,13 @@
 	<script src="../app.js"></script>
 	<script src="../user_service.js"></script>
 	<script src="../user_controller.js"></script>
-	<script>
+	<!-- <script>
 		$(function() {
 			$("#datepicker").datepicker({
 				dateFormat : "yy,mm ,dd"
 			});
 		});
-	</script>
+	</script> -->
 	<!--<script>
             $(function() {
             $('#timepicker').timepicker({
